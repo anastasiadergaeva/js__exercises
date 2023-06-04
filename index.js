@@ -16,5 +16,5 @@ let hoursToMakeJob = daysToMakeJob * daytime; // сколько часов уй�
 
 console.log(hoursToMakeJob >= timeToOrder); // true - успею, false - не успею
 
-let moneyForOrder = hoursToMakeJob * hourlyRate;
+let moneyForOrder = timeToOrder * hourlyRate;
 console.log(moneyForOrder);
