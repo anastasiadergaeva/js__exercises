@@ -18,3 +18,21 @@ console.log(hoursToMakeJob >= timeToOrder); // true - успею, false - не �
 
 let moneyForOrder = timeToOrder * hourlyRate;
 console.log(moneyForOrder);
+
+/** Вася положил 12 000$ на вклад 7% годовых с капитализацией 1 раз в месяц. Вывести в консоль, сможет ли он купить дом за 13 500$ через 2 года после снятия вклада. И остаток после покупки.
+Итог = Сумма * (1 + Ставка в месяц не в %) ^ срок в месяцах */
+
+const investedMoney = 12000;
+const bankRate = 7;
+const period = 24;
+const homeValue = 13500;
+
+let receivedMoney = investedMoney * (1 + (bankRate / 100) / 12) ** period;
+
+if (homeValue <= receivedMoney) {
+    console.log(`Вася сможет купить дом, ура! Остаток: ${receivedMoney - homeValue}`);
+} else {
+    console.log('Вася останется без дома...');
+}
+
+console.log(receivedMoney);
