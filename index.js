@@ -76,3 +76,25 @@ console.log(toPower(2, 3));
 
 const toPowerArrow = (num, power) => num ** power;
 console.log(toPowerArrow(2, 3));
+
+// Кредит на MacBook
+
+function creditMoney (age, hasJob = false) {
+    switch(true) {
+        case age > 24 && hasJob:
+            return 500;
+            break;
+        case age > 24:
+            return 100;
+            break;
+        default:
+            return 0;
+    }
+}
+
+function canBuyMacBook (priceOfMacBookUSD, age, moneyUSD, hasJob = false) {
+    const moneyOfCredit = creditMoney(age, hasJob);
+    return priceOfMacBookUSD <= moneyUSD + moneyOfCredit;
+}
+
+console.log(canBuyMacBook(2000, 30, 1500, true));
