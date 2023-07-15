@@ -103,17 +103,24 @@ console.log(canBuyMacBook(2000, 30, 1500, true));
 
 const tasks = ['Задача 1'];
 
-const addTask = tasks.push('Задача 2');
-console.log(tasks);
-
-if (tasks.includes('Задача 1')) {
-    tasks.shift('Задача 1');
+function additionToTheEnd (task) {
+    tasks.push(task);
 }
 
-console.log(tasks);
-
-if (tasks.at('Задача 2')) {
-    tasks.unshift('Задача 2');
+function deleteByName (task) {
+    const index = tasks.indexOf(tasks);
+    if (index === -1) {
+        return;
+    }
+    tasks.splice(index, 1);
 }
 
-console.log(tasks);
+function moveToStart (task) {
+    const index = tasks.indexOf(tasks);
+    if (index === -1) {
+        return;
+    }
+    const previousTask = tasks[index];
+    tasks.splice(index, 1);
+    tasks.unshift(previousTask);
+}
