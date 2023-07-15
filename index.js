@@ -98,3 +98,22 @@ function canBuyMacBook (priceOfMacBookUSD, age, moneyUSD, hasJob = false) {
 }
 
 console.log(canBuyMacBook(2000, 30, 1500, true));
+
+// Обновление списка задач
+
+const tasks = ['Задача 1'];
+
+const addTask = tasks.push('Задача 2');
+console.log(tasks);
+
+if (tasks.includes('Задача 1')) {
+    tasks.shift('Задача 1');
+}
+
+console.log(tasks);
+
+if (tasks.at('Задача 2')) {
+    tasks.unshift('Задача 2');
+}
+
+console.log(tasks);
