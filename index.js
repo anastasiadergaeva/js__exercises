@@ -112,15 +112,12 @@ function deleteByName (task) {
     if (index === -1) {
         return;
     }
-    tasks.splice(index, 1);
+    return tasks.splice(index, 1);
 }
 
 function moveToStart (task) {
-    const index = tasks.indexOf(tasks);
-    if (index === -1) {
-        return;
+    const resultOfRemove = deleteByName(task);
+    if (result) {
+        tasks.unshift(resultOfRemove[0]);
     }
-    const previousTask = tasks[index];
-    tasks.splice(index, 1);
-    tasks.unshift(previousTask);
 }
