@@ -1,3 +1,4 @@
+// выделение имени
 const fullUserName = 'Elena magiccity elf purple Volnova';
 
 const userName = fullUserName.slice(0, fullUserName.indexOf(' '));
