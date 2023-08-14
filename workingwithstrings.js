@@ -53,8 +53,7 @@ console.log(isNumber(num4Error));
 const card = '2342834503458353';
 
 function maskTheCard (cardNumber) {
-    const lastFourDigits = cardNumber.slice(-4);
-    const maskedNumber = lastFourDigits.padStart(cardNumber.length, '*');
+    const maskedNumber = cardNumber.slice(-4).padStart(cardNumber.length, '*');
     return maskedNumber;
 }
 
