@@ -48,3 +48,14 @@ console.log(isNumber(num1Error));
 console.log(isNumber(num2Error));
 console.log(isNumber(num3Error));
 console.log(isNumber(num4Error));
+
+// маскировка карты
+const card = '2342834503458353';
+
+function maskTheCard (cardNumber) {
+    const lastFourDigits = cardNumber.slice(-4);
+    const maskedNumber = lastFourDigits.padStart(cardNumber.length, '*');
+    return maskedNumber;
+}
+
+console.log(maskTheCard(card));
