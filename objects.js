@@ -7,3 +7,28 @@ const users = [
 ];
 
 console.log(users.sort((a, b) => a.age - b.age));
+
+// преобразование объектов
+const infoOfUsers = [
+    {
+        userName: 'Вася',
+        surname: 'Петров',
+        age: 30,
+        skills: ['Разработка', 'DevOps']
+    },
+    {
+        userName: 'Катя',
+        surname: 'Белова',
+        age: 18,
+        skills: ['Frontend-разработка']
+    }
+];
+
+const userData = infoOfUsers.map(user => {
+    return {
+        fullName: `${user.userName} ${user.surname}`,
+        skillNum: user.skills.length
+    }
+});
+
+console.log(userData);
