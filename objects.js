@@ -32,3 +32,38 @@ const userData = infoOfUsers.map(user => {
 });
 
 console.log(userData);
+
+// кошелёк
+const wallet = {
+    balance: 0,
+    operations: [],
+    increaseBalance: function (sum, reason) {
+        this.balance += sum;
+        this.operations.push({
+            reason: reason,
+            sum: sum
+        });
+        return true;
+    },
+    decreaseBalance: function (sum, reason) {
+        if (this.balance < sum) {
+            return false;
+        }
+        this.balance -= sum;
+        this.operations.push({
+            reason: reason,
+            sum: -sum
+        });
+        return true;
+    },
+    getOperationLength: function () {
+        return this.operations.length;
+    }
+    };
+
+    console.log(wallet.increaseBalance(10000, 'аванс'));
+    console.log(wallet.getOperationLength());
+    console.log(wallet.decreaseBalance(-1000, 'магазин'));
+    console.log(wallet.getOperationLength());
+    console.log(wallet.balance);
+    console.log(wallet.operations);
